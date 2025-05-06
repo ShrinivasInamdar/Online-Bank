@@ -22,7 +22,9 @@ exports.protect = async (req, res, next) => {
     }
 
     // Verify token
-    const decoded = jwt.verify(token, process.env.JWT_SECRET) // TODO: Insert JWT_SECRET here (a strong random string for token encryption)
+
+    const decoded = jwt.verify(token, process.env.JWT_SECRET)
+
 
     // Get user from token
     req.user = await User.findById(decoded.id)

@@ -1,4 +1,4 @@
-// Add NODE_ENV comment at the top
+
 const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
@@ -11,7 +11,9 @@ const notificationRoutes = require("./routes/notifications")
 const userRoutes = require("./routes/users")
 
 // Load environment variables
-dotenv.config() // TODO: Make sure to create a .env file with all required variables (see .env.example)
+
+dotenv.config()
+
 
 // Create Express app
 const app = express()
@@ -19,7 +21,8 @@ const app = express()
 // Middleware
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:3000", // TODO: Insert FRONTEND_URL here (e.g., "http://localhost:3000")
+
+    origin: process.env.FRONTEND_URL || "http://localhost:3000",
     credentials: true,
   }),
 )
@@ -27,10 +30,6 @@ app.use(express.json())
 app.use(cookieParser())
 
 // Connect to MongoDB
-mongoose
-  .connect(process.env.MONGODB_URI || "mongodb://localhost:27017/securebank") // TODO: Insert MONGODB_URI here (e.g., "mongodb://localhost:27017/securebank")
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((err) => console.error("MongoDB connection error:", err))
 
 // Routes
 app.use("/api/auth", authRoutes)
@@ -50,7 +49,3 @@ app.use((err, req, res, next) => {
 })
 
 // Start server
-const PORT = process.env.PORT || 5000 // TODO: Insert PORT here (default: 5000)
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
-})

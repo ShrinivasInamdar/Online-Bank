@@ -65,14 +65,13 @@
     "axios": "latest",
     "cors": "latest",
     "dotenv": "latest",
-    "cookie-parser": "latest"
-  },
-  "devDependencies": {
-    "@types/node": "^22",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.17",
-    "typescript": "^5"
-  }
-}
+    "cookie-parser": "latest
+    "express": "latest",
+    "mongoose": "latest",
+    "cors": "latest",
+    "dotenv": "latest",
+    "cookie-parser": "latest",
+    "bcryptjs": "latest",
+    "jsonwebtoken": "latest",
+    "axios": "latest"
+
